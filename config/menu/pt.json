@@ -1,0 +1,8 @@
+{
+  "menuItems": [
+    { "name": "Início", "link": "/" },
+    { "name": "Mizzon", "link": "#mizzon" },
+    { "name": "Sobre", "link": "#sobre" },
+    { "name": "Contato", "link": "#contato" }
+  ]
+}

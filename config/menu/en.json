@@ -1,0 +1,8 @@
+{
+  "menuItems": [
+    { "name": "Home", "link": "#home" },
+    { "name": "Mission", "link": "#mission" },
+    { "name": "Services", "link": "#services" },
+    { "name": "Contact", "link": "#contact" }
+  ]
+}
