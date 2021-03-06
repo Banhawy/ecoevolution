@@ -10,26 +10,48 @@ import useMenu from "../components/useMenu";
 import * as S from "../components/ListWrapper/styled";
 
 const Index = ({ data: { allMarkdownRemark } }) => {
-  // useTranslations is aware of the global context (and therefore also "locale")
-  // so it'll automatically give back the right translations
-  const { hello, subline, mission, missionText } = useTranslations();
-  const useMenuItems = useMenu();
-  const sectionId = (section) =>
-    useMenuItems.filter((menuItem) => menuItem.name === section).link;
+    // useTranslations is aware of the global context (and therefore also "locale")
+    // so it'll automatically give back the right translations
+    const { hello, subline, mission, missionText } = useTranslations();
+    const useMenuItems = useMenu();
+    const sectionId = (section) =>
+        useMenuItems.filter((menuItem) => menuItem.name === section).link;
 
-  return (
-    <div className="homepage">
-      <SEO title="Home" />
-      <TitlePage text={hello} id={sectionId("home")} />
-      <p>{subline}</p>
-      <hr style={{ margin: `2rem 0` }} />
-      <TitlePage text={mission} id={sectionId("mission")} />
-      <p>{missionText}</p>
-      <hr style={{ margin: `2rem 0` }} />
+    return (
+        <div className="homepage">
+            <SEO title="Home" />
+            <TitlePage text={hello} id={sectionId("home")} />
+            <p>{subline}</p>
+            <hr style={{ margin: `2rem 0` }} />
+            <TitlePage text={mission} id={sectionId("mission")} />
+            <p>{missionText}</p>
+            <hr style={{ margin: `2rem 0` }} />
 
-      <br />
-
-      {/* <S.ListWrapper>
+            <br />
+            <div className="card-container">
+                <div className="card">
+                    <img src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Avatar" style={{width: "100%"}}/>
+                    <div className="container">
+                        <h4><b>John Doe</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <img src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Avatar" style={{width: "100%"}}/>
+                    <div className="container">
+                        <h4><b>John Doe</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <img src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Avatar" style={{width: "100%"}}/>
+                    <div className="container">
+                        <h4><b>John Doe</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+            </div>
+            {/* <S.ListWrapper>
         {postList.map(
           ({
             node: {
@@ -60,11 +82,11 @@ const Index = ({ data: { allMarkdownRemark } }) => {
         )}
       </S.ListWrapper> */}
 
-      <br />
+            <br />
 
-      {/* <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink> */}
-    </div>
-  );
+            {/* <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink> */}
+        </div>
+    );
 };
 
 export default Index;
