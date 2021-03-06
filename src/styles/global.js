@@ -133,7 +133,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 2px 16px;
     }
 
-
+    .error {
+        color: red;
+    }
   }
 `;
 export default GlobalStyles;
