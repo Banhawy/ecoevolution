@@ -13,7 +13,7 @@
     "lint": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {
-    "customisable-contact-form": "^1.0.0",
+    "customisable-contact-form": "github:Banhawy/customisable-contact-form",
     "gatsby": "^2.3.3",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-manifest": "^2.2.20",
