@@ -106,6 +106,30 @@ const GlobalStyles = createGlobalStyle`
     --space: 2rem;
     --space-sm: 1rem;
     --space-lg: 3rem;
+    .card-container {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+    }
+    .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 0 1rem;
+    }
+
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    /* Add some padding inside the card container */
+    .container {
+    padding: 2px 16px;
+    }
+
 
   }
 `;
