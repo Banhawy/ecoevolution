@@ -3981,8 +3981,8 @@
     "array-find-index" "^1.0.1"
 
 "customisable-contact-form@github:Banhawy/customisable-contact-form":
-  "resolved" "git+ssh://git@github.com/Banhawy/customisable-contact-form.git#04a7033694173c356426a284bf84fa8064752184"
-  "version" "1.0.0"
+  "resolved" "git+ssh://git@github.com/Banhawy/customisable-contact-form.git#fd9c3514b19abf7510beadff76b3f731a2d7be44"
+  "version" "1.0.2"
   dependencies:
     "@types/styled-components" "^5.1.4"
     "react-hook-form" "^6.11.1"
