@@ -37,6 +37,7 @@ const query = graphql`
             hello
             subline
             mission
+            services
             missionText
             category
             allPosts
