@@ -9,6 +9,7 @@ import useMenu from "../components/useMenu";
 import Form from 'customisable-contact-form'
 import {
     Heading,
+    Name,
     FirstName,
     LastName,
     Email,
@@ -67,25 +68,48 @@ const Index = ({ data: { allMarkdownRemark } }) => {
             <br />
 
             <ContactUs />
-            
+
         </div>
     );
 };
 
 function ContactUs() {
     const theme = {
-    primaryFont: "Bookman",
-    inputBorderRadius: "13px",
-    inputBorderWeight: "1px",
-    width: "70%"
+        primaryFont: "Bookman",
+        inputBorderRadius: "13px",
+        inputBorderWeight: "1px",
+        width: "70%"
     }
     const title = "Contact Us"
+
+    const sendMail = ({ name, email, message }) => {
+        const raw = JSON.stringify({
+            senderEmail: email,
+            senderName: `${name}`,
+            message
+        })
+        let requestOptions = {
+            method: 'POST',
+            body: raw
+        };
+        fetch('https://3bayg0kecg.execute-api.me-south-1.amazonaws.com/default/sendEcoevolutionMail',
+            requestOptions
+        )
+            .then(res => res.json())
+            .then(
+                result => {
+                    console.log('Result:', result)
+                }
+            )
+            .catch(
+                error => console.log('Error: ', error)
+            )
+    }
     return (
         <>
-             <Form theme={theme}>
+            <Form theme={theme} onSubmit={sendMail}>
                 <Heading title={title} />
-                <FirstName />
-                <LastName />
+                <Name />
                 <Email />
                 <Message />
                 <SubmitButton />
