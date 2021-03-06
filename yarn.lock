@@ -3980,9 +3980,8 @@
   dependencies:
     "array-find-index" "^1.0.1"
 
-"customisable-contact-form@^1.0.0":
-  "integrity" "sha512-vcGRLw22WUaZE737jwqSvefKZeBToJgs/fAiSnimRrSyRWmWQbU6UdciVLab8mJZZvO1c+4RrvPDusIolwiFpA=="
-  "resolved" "https://registry.npmjs.org/customisable-contact-form/-/customisable-contact-form-1.0.0.tgz"
+"customisable-contact-form@github:Banhawy/customisable-contact-form":
+  "resolved" "git+ssh://git@github.com/Banhawy/customisable-contact-form.git#04a7033694173c356426a284bf84fa8064752184"
   "version" "1.0.0"
   dependencies:
     "@types/styled-components" "^5.1.4"
