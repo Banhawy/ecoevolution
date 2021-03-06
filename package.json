@@ -13,6 +13,7 @@
     "lint": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {
+    "customisable-contact-form": "^1.0.0",
     "gatsby": "^2.3.3",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-manifest": "^2.2.20",
@@ -37,6 +38,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-hook-form": "^6.15.4",
     "styled-components": "^4.4.0",
     "styled-icons": "^8.4.2",
     "styled-media-query": "^2.1.2"
