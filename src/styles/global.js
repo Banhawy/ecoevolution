@@ -114,10 +114,13 @@ const GlobalStyles = createGlobalStyle`
         }
     }
     .card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    margin: 0 1rem;
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        margin: 0 1rem;
+        @media (max-width: 768px) {
+            margin: 1rem 0;
+        }
     }
 
     /* On mouse-over, add a deeper shadow */
