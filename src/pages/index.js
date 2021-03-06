@@ -52,40 +52,6 @@ const Index = ({ data: { allMarkdownRemark } }) => {
                     </div>
                 </div>
             </div>
-            {/* <S.ListWrapper>
-        {postList.map(
-          ({
-            node: {
-              frontmatter: {
-                background,
-                category,
-                date,
-                description,
-                title,
-                image
-              },
-              timeToRead,
-              fields: { slug }
-            }
-          }) => (
-            <PostItem
-              slug={`/blog/${slug}`}
-              background={background}
-              category={category}
-              date={date}
-              timeToRead={timeToRead}
-              title={title}
-              description={description}
-              image={image}
-              key={slug}
-            />
-          )
-        )}
-      </S.ListWrapper> */}
-
-            <br />
-
-            {/* <LocalizedLink to={`/blog/`}>{allPosts}</LocalizedLink> */}
         </div>
     );
 };
