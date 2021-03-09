@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import LocalizedLink from '../LocalizedLink';
+import nature from '../../images/nature.jpg'
 
 export const HeaderWrapper = styled.div`
-  background-color: var(--bg-light);
+  background-image: linear-gradient(to bottom, rgba(210, 219, 184, 0.36), rgba(229, 232, 222, 0.83)), url(${nature});
+  background-attachment: fixed;
+  background-position: 0% 1130%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 24rem;
   ${media.greaterThan('large')`
     margin-bottom: var(--space);
   `}
