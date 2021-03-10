@@ -4,14 +4,6 @@ import SEO from "../components/seo";
 import TitlePage from "../components/TitlePage";
 import useTranslations from "../components/useTranslations";
 import useMenu from "../components/useMenu";
-import Form from 'customisable-contact-form'
-import {
-    Heading,
-    Name,
-    Email,
-    Message,
-    SubmitButton
-} from 'customisable-contact-form'
 
 const Index = () => {
     // useTranslations is aware of the global context (and therefore also "locale")
@@ -65,56 +57,11 @@ This will ensure that the next generation can live in a clean and beautiful worl
 
             <br />
 
-            <ContactUs />
+            {/* <ContactUs /> */}
 
         </div>
     );
 };
-
-function ContactUs() {
-    const theme = {
-        primaryFont: "Bookman",
-        inputBorderRadius: "13px",
-        inputBorderWeight: "1px",
-        width: "70%"
-    }
-    const title = "Contact Us"
-
-    const sendMail = ({ name, email, message }) => {
-        const raw = JSON.stringify({
-            senderEmail: email,
-            senderName: `${name}`,
-            message
-        })
-        let requestOptions = {
-            method: 'POST',
-            body: raw
-        };
-        fetch('https://3bayg0kecg.execute-api.me-south-1.amazonaws.com/default/sendEcoevolutionMail',
-            requestOptions
-        )
-            .then(res => res.status === 200 ? res.json() : new Error(`Error in fetch: ${res}`))
-            .then(
-                result => {
-                    console.log('Result:', result)
-                }
-            )
-            .catch(
-                error => console.log('Error: ', error)
-            )
-    }
-    return (
-        <>
-            <Form theme={theme} onSubmit={sendMail}>
-                <Heading title={title} />
-                <Name />
-                <Email />
-                <Message />
-                <SubmitButton />
-            </Form>
-        </>
-    )
-}
 
 export default Index;
 
