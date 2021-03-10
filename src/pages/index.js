@@ -1,24 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
-import PostItem from "../components/PostItem";
 import TitlePage from "../components/TitlePage";
-import LocalizedLink from "../components/LocalizedLink";
 import useTranslations from "../components/useTranslations";
 import useMenu from "../components/useMenu";
 import Form from 'customisable-contact-form'
 import {
     Heading,
     Name,
-    FirstName,
-    LastName,
     Email,
     Message,
     SubmitButton
 } from 'customisable-contact-form'
-
-import * as S from "../components/ListWrapper/styled";
-import { Contact } from "styled-icons/boxicons-solid";
 
 const Index = ({ data: { allMarkdownRemark } }) => {
     // useTranslations is aware of the global context (and therefore also "locale")
@@ -32,10 +25,15 @@ const Index = ({ data: { allMarkdownRemark } }) => {
         <div className="homepage">
             <SEO title="Home" />
             <TitlePage text={hello} id={sectionId("home")} />
-            <p>{subline}</p>
+            {/* <p>{subline}</p> */}
+            <blockquote className="blockquote">“The Earth is what we all have in common...”
+            —Wendell Berry
+            </blockquote>
             <hr style={{ margin: `2rem 0` }} />
             <TitlePage text={mission} id={sectionId("mission")} />
-            <p>{missionText}</p>
+            {/* <p>{missionText}</p> */}
+            <p>Our goal is to provide day-to-day services to the general public using an environmentally friendly approaches.
+This will ensure that the next generation can live in a clean and beautiful world that we once had.</p>
             <hr style={{ margin: `2rem 0` }} />
 
             <br />
