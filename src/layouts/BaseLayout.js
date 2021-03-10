@@ -3,6 +3,8 @@ import GlobalStyles from '../styles/global';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
+import 'mdbreact/dist/css/mdb.css';
 
 import { useLocale } from '../hooks/locale';
 

@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
+import 'bootstrap-css-only/css/bootstrap.min.css';
 
 const GlobalStyles = createGlobalStyle`
-  /* http://meyerweb.com/eric/tools/css/reset/
+  @import url(https://fonts.googleapis.com/css?family=Philosopher);
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
   */
@@ -65,6 +67,10 @@ const GlobalStyles = createGlobalStyle`
     ${media.greaterThan('large')`
       font-size: 1.7rem;
     `}
+  }
+  p {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2.5rem;
   }
   img {
     display: block;
@@ -136,6 +142,27 @@ const GlobalStyles = createGlobalStyle`
     .error {
         color: red;
     }
+
+    .scrollbar-morpheus-den {
+      scrollbar-color: #330867 #f5f5f5;
+    }
+    
+    .scrollbar-morpheus-den::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+    
+    .scrollbar-morpheus-den::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+    
+    .scrollbar-morpheus-den::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+    background-image: -webkit-linear-gradient(bottom, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); }
+    
   }
 `;
 export default GlobalStyles;
