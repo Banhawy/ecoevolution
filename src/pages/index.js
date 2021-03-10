@@ -93,7 +93,7 @@ function ContactUs() {
         fetch('https://3bayg0kecg.execute-api.me-south-1.amazonaws.com/default/sendEcoevolutionMail',
             requestOptions
         )
-            .then(res => res.json())
+            .then(res => res.status === 200 ? res.json() : new Error(`Error in fetch: ${res}`))
             .then(
                 result => {
                     console.log('Result:', result)
