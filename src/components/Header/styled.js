@@ -6,7 +6,10 @@ import nature from '../../images/nature.jpg'
 export const HeaderWrapper = styled.div`
   background-image: linear-gradient(to bottom, rgba(210, 219, 184, 0.36), rgba(229, 232, 222, 0.83)), url(${nature});
   background-attachment: fixed;
-  background-position: 0% 1130%;
+  background-position: 0% -38rem;
+  @media (min-width: 1024px) {
+    background-position: 0% -45rem;
+  }
   background-repeat: no-repeat;
   background-size: cover;
   height: 24rem;
