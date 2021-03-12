@@ -9,7 +9,6 @@ import {
 } from 'customisable-contact-form'
 
 const ContactUs = () => {
-    const
     const theme = {
         primaryFont: "Bookman",
         inputBorderRadius: "13px",
@@ -18,7 +17,7 @@ const ContactUs = () => {
     }
     const title = "Contact Us"
 
-    const sendMail = ({ name, email, message }) => {
+    const sendMail = ({ name, email, message }, { target }) => {
         const raw = JSON.stringify({
             senderEmail: email,
             senderName: `${name}`,
@@ -34,7 +33,7 @@ const ContactUs = () => {
             .then(res => res.status === 200 ? res.json() : new Error(`Error in fetch: ${res}`))
             .then(
                 result => {
-                    console.log('Result:', result)
+                    target.reset();
                 }
             )
             .catch(
