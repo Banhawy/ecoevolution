@@ -20,7 +20,7 @@ const Spinner = () => {
 }
 
 
-const ContactUs = () => {
+const ContactUs = ({ id }) => {
     const [isLoading, setIsLoading] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
     const [isStatusError, setIsStatusError] = useState(false)
@@ -66,7 +66,7 @@ const ContactUs = () => {
             )
     }
     return (
-        <>
+        <div id={id}>
             <Form theme={theme} onSubmit={sendMail}>
                 <Heading title={title} />
                 <Name />
@@ -76,7 +76,7 @@ const ContactUs = () => {
                 {isSuccess && (<MDBTypography colorText="green">Your message was successfully sent. We'll be in touch with you soon!</MDBTypography>)}
                 {isStatusError && (<MDBTypography colorText="red">An error eccoured while sending your message.</MDBTypography>)}
             </Form>
-        </>
+        </div>
     )
 }
 

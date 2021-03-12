@@ -12,7 +12,7 @@ const Index = () => {
     const { hello, subline, mission, services, missionText } = useTranslations();
     const useMenuItems = useMenu();
     const sectionId = (section) =>
-        useMenuItems.filter((menuItem) => menuItem.name === section).link;
+        useMenuItems.filter((menuItem) => menuItem.name.toLowerCase() === section)[0].link.slice(1);
 
     return (
         <div className="homepage">
@@ -58,7 +58,7 @@ This will ensure that the next generation can live in a clean and beautiful worl
 
             <br />
 
-            <ContactUs />
+            <ContactUs id={sectionId("contact")} />
 
         </div>
     );
