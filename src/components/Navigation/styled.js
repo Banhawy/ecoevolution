@@ -16,6 +16,7 @@ export const Navigation = styled.nav`
 export const NavigationLink = styled.a`
   color: var(--text-dark);
   text-decoration: none;
+  font-weight: 500;
   position: relative;
   padding: 0 var(--space-sm);
   margin-bottom: var(--space-sm);
