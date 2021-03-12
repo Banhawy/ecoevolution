@@ -107,11 +107,23 @@ const GlobalStyles = createGlobalStyle`
     --text-light:var(--gray-light);
     --text-dark: var(--gray-dark);
 
-    --width-container: 1040px;
+    --width-container: 100%;
+    --width-narrow: 1040px;
 
     --space: 2rem;
     --space-sm: 1rem;
     --space-lg: 3rem;
+    section.narrow {
+      @media (max-width: 768px) {
+        margin: 0;
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        margin: 0 13rem
+      }
+      @media (min-width: 1024px) { 
+        margin: 0 16%
+      }
+    }
     .card-container {
         display: flex;
         justify-content: center;
