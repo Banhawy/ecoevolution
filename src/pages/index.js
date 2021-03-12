@@ -40,12 +40,12 @@ const Index = () => {
             <section>
                 <TitlePage text={services} id={sectionId("services")} />
                 <HeroCard />
-                <hr style={{ margin: `2rem 0` }} />
             </section>
 
             <br />
 
             <section className="narrow">
+                <hr style={{ margin: `2rem 0` }} />
                 <ContactUs id={sectionId("contact")} />
             </section>
 
