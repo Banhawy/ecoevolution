@@ -130,6 +130,30 @@ const GlobalStyles = createGlobalStyle`
         @media (max-width: 768px) {
             flex-wrap: wrap;
         }
+        h3 {
+          font-size: x-large;
+        }
+        p {
+          font-size: 2rem;
+        }
+        .card-icons {
+          display: flex;
+          justify-content: center;
+          i {
+            margin: 1rem;
+            &:nth-child(1){
+              color: #03a9f4;
+            }
+            &:nth-child(2){
+              color: #66bb6a;
+            }
+          }
+        }
+    }
+    .card-holder {
+        width: 75%;
+        text-align: center;
+        transform: translateY(-3rem);
     }
     .card {
         /* Add shadows to create the "card" effect */
