@@ -4,6 +4,7 @@ import SEO from "../components/seo";
 import TitlePage from "../components/TitlePage";
 import useTranslations from "../components/useTranslations";
 import useMenu from "../components/useMenu";
+import ContactUs from "../components/ContactUs";
 
 const Index = () => {
     // useTranslations is aware of the global context (and therefore also "locale")
@@ -57,7 +58,7 @@ This will ensure that the next generation can live in a clean and beautiful worl
 
             <br />
 
-            {/* <ContactUs /> */}
+            <ContactUs />
 
         </div>
     );
