@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from 'customisable-contact-form'
 import {
     Heading,
@@ -7,8 +7,23 @@ import {
     Message,
     SubmitButton
 } from 'customisable-contact-form'
+import { MDBTypography } from 'mdbreact';
+
+const Spinner = () => {
+    return (
+        <>
+            <div className="spinner-border text-success" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
+        </>
+    );
+}
+
 
 const ContactUs = () => {
+    const [isLoading, setIsLoading] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
+    const [isStatusError, setIsStatusError] = useState(false)
     const theme = {
         primaryFont: "Bookman",
         inputBorderRadius: "13px",
@@ -18,6 +33,8 @@ const ContactUs = () => {
     const title = "Contact Us"
 
     const sendMail = ({ name, email, message }, { target }) => {
+        setIsLoading(true)
+        setIsStatusError(false)
         const raw = JSON.stringify({
             senderEmail: email,
             senderName: `${name}`,
@@ -30,14 +47,22 @@ const ContactUs = () => {
         fetch('https://3bayg0kecg.execute-api.me-south-1.amazonaws.com/default/sendEcoevolutionMail',
             requestOptions
         )
-            .then(res => res.status === 200 ? res.json() : new Error(`Error in fetch: ${res}`))
+            .then(res => {
+                if (res.status !== 200) throw new Error(`Error in fetch`)
+                return res.json();
+            })
             .then(
                 result => {
+                    setIsLoading(false)
+                    setIsSuccess(true)
                     target.reset();
                 }
             )
             .catch(
-                error => console.log('Error: ', error)
+                error => {
+                    setIsLoading(false)
+                    setIsStatusError(true)
+                }
             )
     }
     return (
@@ -47,7 +72,9 @@ const ContactUs = () => {
                 <Name />
                 <Email />
                 <Message />
-                <SubmitButton />
+                <SubmitButton buttonTitle={isLoading ? <Spinner /> : 'Submit'} />
+                {isSuccess && (<MDBTypography colorText="green">Your message was successfully sent. We'll be in touch with you soon!</MDBTypography>)}
+                {isStatusError && (<MDBTypography colorText="red">An error eccoured while sending your message.</MDBTypography>)}
             </Form>
         </>
     )
