@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.div`
   }
   background-repeat: no-repeat;
   background-size: cover;
-  height: 24rem;
+  height: 100%;
   ${media.greaterThan('large')`
     margin-bottom: var(--space);
   `}
