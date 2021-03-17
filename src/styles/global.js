@@ -198,6 +198,21 @@ const GlobalStyles = createGlobalStyle`
     background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
     background-image: -webkit-linear-gradient(bottom, #30cfd0 0%, #330867 100%);
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); }
+
+    #contact {
+      div {
+        button {
+          padding : 1.5rem;
+          @media (max-width: 768px) {
+            font-size: 1.3rem;
+          }
+          @media (max-width: 380px) {
+            font-size: 1rem;
+            letter-spacing: 12px;
+          }
+        }
+      }
+    }
     
   }
 `;
