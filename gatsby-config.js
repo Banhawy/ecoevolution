@@ -79,31 +79,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`400`, `600`],
-          },
-        ],
+        fonts: [`Open Sans`],
       },
+      display: 'swap'
     },
 
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby multiple language`,
-        short_name: `Gatsby multiple language`,
-        start_url: `/`,
-        background_color: `#16202c`,
-        theme_color: `#16202c`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
   ],
 };
